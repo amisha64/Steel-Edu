@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% block title %}Prediction{%endblock title%}
+
+{% block body %}
+
+<head>
+  <meta name="viewport"  content="with=device-width,initial-scale=1.0">
+      <title>Demand Supply website</title>
+      <link rel="stylesheet" href="static/style.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css">
+
+</head>
+
+<div class="container">
+<img src="https://source.unsplash.com/1200x400/?measurement" class="img-fluid my-4" alt="...">
+
+<br>
+<br>
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-12 offset-md-2">
+            <div class="card shadow">
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Country Name</th>
+                            <th scope="col">Year</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">State Pin</th>
+                            <th scope="col">Type of steel product</th>
+                            <th scope="col">Consumption Percentage in Million Ton(s)</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {% for data in predicted_consumption %}
+                          <tr>
+                            <th scope="row">{%if data.country %}INDIA {%endif %}</th>
+                            {% comment %} <th scope="row">{{data.country}}</th> {% endcomment %}
+                            <td>{{data.year}}</td>
+                            <td>{%if data.category %} Non-Alloy Finished Steel{%endif%}</td>
+                            <td>
+                              {% if data.state == 1 %}Jammu and Kashmir{%endif%}
+                              {% if data.state == 2 %}Andhra Pradesh{%endif%}
+                              {% if data.state == 3 %}Arunachal Pradesh{%endif%}
+                              {% if data.state == 4 %}Assam{%endif%}
+                              {% if data.state == 5 %}Bihar{%endif%}
+                              {% if data.state == 6 %}Chhattisgarh{%endif%}
+                              {% if data.state == 7 %}Goa{%endif%}
+                              {% if data.state == 8 %}Gujarat{%endif%}
+                              {% if data.state == 9 %}Haryana{%endif%}
+                              {% if data.state == 10 %}Himachal Pradesh{%endif%}
+                              {% if data.state == 11 %}Jharkhand{%endif%}
+                              {% if data.state == 12 %}Karnataka{%endif%}
+                              {% if data.state == 13 %}Kerala{%endif%}
+                              {% if data.state == 14 %}Madhya Pradesh{%endif%}
+                              {% if data.state == 15 %}Maharashtra{%endif%}
+                              {% if data.state == 16 %}Manipur{%endif%}
+                              {% if data.state == 17 %}Meghalaya{%endif%}
+                              {% if data.state == 18 %}Mizoram{%endif%}
+                              {% if data.state == 19 %}Nagaland{%endif%}
+                              {% if data.state == 20 %}Odisha{%endif%}
+                              {% if data.state == 21 %}Punjab{%endif%}
+                              {% if data.state == 22 %}Rajasthan{%endif%}
+                              {% if data.state == 23 %}Sikkim{%endif%}
+                              {% if data.state == 24 %}Tamil Nadu{%endif%}
+                              {% if data.state == 25 %}Telangana{%endif%}
+                              {% if data.state == 26 %}Tripura{%endif%}
+                              {% if data.state == 27 %}Uttar Pradesh{%endif%}
+                              {% if data.state == 28 %}Uttarakhand{%endif%}
+                              {% if data.state == 29 %}West Bengal{%endif%}
+                              {% if data.state == 30 %}Chandigarh{%endif%}
+                              {% if data.state == 31 %}Delhi{%endif%}
+                            </td>
+                            <td>
+                              {% if data.type == 0 %}Bars and Rods{%endif%}
+                              {% if data.type == 1 %}Stainless Steel{%endif%}
+                              {% if data.type == 2 %}HR Coil{%endif%}
+                              {% if data.type == 3 %}Galvanized Iron Coil{%endif%}
+                            </td>
+                            <td>{{data.consumption}}</td>
+                          </tr>
+                          {% endfor %}
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{%endblock body%}

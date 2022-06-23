@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block title %}About{%endblock title%}
+{% load crispy_forms_tags %}
+
+{% block body %}
+
+<head>
+    <meta name="viewport"  content="with=device-width,initial-scale=1.0">
+        <title>Demand Supply website</title>
+        <link rel="stylesheet" href="static/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css">
+  
+  </head>
+
+<table id="home" border="0" width="100%" cellpadding="0" cellspacing="0" bgcolor="lightyellow">
+    <tr>
+        <td>
+            <table border="0" width="85%" cellpadding="10" cellspacing="0" align="center">
+                <tr>
+                    <td align="center" valign="middle">
+                        <h4>
+                            <font face="arial" color="FF4905" size="5">
+                                 Steel Consumption Percentage
+                            </font>
+                        </h4>
+                    <h5>
+                        <font face="arial" color="FF4905" size="3">
+                            Calculate the Yearly Steel Consumption prediction based on the country name, type of 
+                                            steel in use, state of commerce!
+                       </font>
+                    </h5>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<br>
+
+{% block content %}
+&emsp; &emsp; &emsp; <div class="container-fluid">
+    <div class="row mt-8">
+        <div class="col-md-12 offset-md-2">
+            <div class="card shadow">
+                <div class="card body">
+                    <form method = "POST">
+                        {%csrf_token %}
+                        {{ form | crispy }}
+                        <br>
+                        &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; 
+                        &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
+                         &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; 
+                         <input class="btn-btn-info" type="submit" value="Predict Steel Consumption of the state">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}
+{%endblock body%}

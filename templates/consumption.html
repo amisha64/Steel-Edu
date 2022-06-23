@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Consumption{%endblock title%}
+{% block body %}
+<head>
+    <meta name="viewport"  content="with=device-width,initial-scale=1.0">
+        <title>Demand Supply website</title>
+        <link rel="stylesheet" href="static/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css">
+  
+  </head>
+{%if chart%}
+    &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; <img src="data:image/png;base64, {{chart|safe}}" style="vertical-align:middle">
+{%endif%}
+
+{%endblock body%}

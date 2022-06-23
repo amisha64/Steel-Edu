@@ -1,0 +1,1 @@
+web: gunicorn vtprojectdeploy.wsgi --log-file -
